@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body><CartProvider>{children}</CartProvider></body>
+      <head>
+        <script
+          src="https://verobehavior.vercel.app/api/snippet?key=terra-store"
+          async
+        />
+      </head>
+      <body>
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   )
 }
