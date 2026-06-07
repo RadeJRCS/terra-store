@@ -9,7 +9,7 @@ export default function ProductsPage() {
   const { addItem } = useCart()
   const [filter, setFilter] = useState('All')
   const [added, setAdded] = useState<string | null>(null)
-  const categories = ['All', ...new Set(products.map(p => p.category))]
+  const categories = ['All', ...Array.from(new Set(products.map(p => p.category)))]
   const filtered = filter === 'All' ? products : products.filter(p => p.category === filter)
 
   const handleAdd = (product: typeof products[0]) => {
